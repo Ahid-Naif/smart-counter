@@ -25,7 +25,7 @@ class Printer
      * @param DocumentInterface $document
      * @param int $copies
      */
-    public function printDocument(DocumentInterface $document, int $copies = 1)
+    public function print(DocumentInterface $document, int $copies = 1)
     {
         if ($this->printer)
         {

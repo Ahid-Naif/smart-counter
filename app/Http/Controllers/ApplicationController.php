@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\ApplicationStatus;
 use App\ApplicationType;
 use App\Application;
+use App\Helpers\Printer;
+use App\Helpers\TextDocument;
 use App\Http\Requests\CreateApplicationFormRequest;
 use App\Http\Resources\ApplicationTypeCollection;
 use App\Mail\ApplicationCreated;
@@ -34,7 +36,14 @@ class ApplicationController extends Controller
      */
     public function store(CreateApplicationFormRequest $request)
     {
+        $file = new TextDocument(
+            storage_path('app/demo/graduation-letter.txt')
+        );
+        
+        $printer = new Printer();
+        $printer->print($file);
+        
         return response()
-            ->json([ 'data' => 'okay'], 200);
+            ->json(['data' => 'okay'], 200);
     }
 }
