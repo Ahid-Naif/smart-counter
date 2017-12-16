@@ -38,29 +38,6 @@ class ApplicationStatus extends Model
     }
     
     /**
-     * Get the progress percentage of the application based on it's current status.
-     *
-     * @param $status
-     * @return int
-     */
-    public static function percentage($status)
-    {
-        $percentage = 0;
-        
-        if($status == self::Sent){
-            $percentage = 25;
-        }else if($status == self::LecturerApproved || $status == self::LecturerRejected){
-            $percentage = 50;
-        }else if($status == self::SAApproved || $status == self::SARejected){
-            $percentage = 75;
-        }else if($status == self::Completed){
-            $percentage = 100;
-        }
-        
-        return $percentage;
-    }
-    
-    /**
      * Get the feedback message of the application based on it's current status.
      *
      * @param $status

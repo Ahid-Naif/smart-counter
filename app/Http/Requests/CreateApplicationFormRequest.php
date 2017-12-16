@@ -23,10 +23,6 @@ class CreateApplicationFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            "application_type_id" => "required|exists:application_types,id",
-            "course_id" => "required|exists:courses,id",
-            "section_id" => "required|exists:sections,id"
-        ];
+        return [];
     }
 }

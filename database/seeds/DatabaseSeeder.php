@@ -12,9 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     protected $toTruncate = [
         'users',
-        'colleges',
-        'courses',
-        'sections',
         'application_statuses',
         'application_types'
     ];
@@ -29,10 +26,7 @@ class DatabaseSeeder extends Seeder
         if (App::environment('local')) {
             $this->truncate();
 
-            $this->call(CollegesSeeds::class);
-            $this->call(CoursesSeeds::class);
             $this->call(UsersSeeds::class);
-            $this->call(SectionsSeeds::class);
         }
          
         $this->call(ApplicationStatusesSeeds::class);

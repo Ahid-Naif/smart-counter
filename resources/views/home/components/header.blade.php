@@ -30,7 +30,7 @@
                     data-aos-duration="500"
                     data-aos-once="true"
                     class="txt-navy-color">
-                    ADroper, IIUM online courses registration.
+                    IIUM Fast Self Smart Counter Services.
                 </h1>
                 <h3 data-aos="fade-up"
                     data-aos-easing="ease-in-sine"
@@ -38,7 +38,7 @@
                     data-aos-delay="50"
                     data-aos-once="true"
                     class="txt-navy-color">
-                    Add/Drop your subjects online within a minute!
+                    Process your applications within few seconds!
                 </h3>
                 <a data-aos="fade-up"
                    data-aos-easing="ease-in-out"

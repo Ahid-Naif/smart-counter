@@ -6,7 +6,6 @@ import createApplication from './app/CreateApplication.vue'
 import login from './app/Login.vue'
 import applications from './app/ShowApplications.vue'
 import register from './app/Register.vue'
-import approval from './app/Approval.vue'
 
 const app = new Vue({
     el: '#app',
@@ -15,6 +14,5 @@ const app = new Vue({
         login,
         register,
         applications,
-        approval
     }
 });

@@ -21,7 +21,7 @@
             <li class="@yield('create-application-active')">
                 <a href="{{ route('portal.application.create') }}">
                     <i class="material-icons">assignment</i>
-                    <p>New Application</p>
+                    <p>Applications</p>
                 </a>
             </li>
         </ul>

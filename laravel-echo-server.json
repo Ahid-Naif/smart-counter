@@ -1,5 +1,5 @@
 {
-	"authHost": "http://adroper.dev",
+	"authHost": "http://smartcounter.dev",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [],
 	"database": "redis",
@@ -20,7 +20,7 @@
 	"sslPassphrase": "",
 	"apiOriginAllow": {
 		"allowCors": true,
-		"allowOrigin": "http://adroper.dev",
+		"allowOrigin": "http://smartcounter.dev",
 		"allowMethods": "GET",
 		"allowHeaders": "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id"
 	}

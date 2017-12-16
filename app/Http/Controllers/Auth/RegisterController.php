@@ -34,8 +34,6 @@ class RegisterController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -49,7 +47,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('auth.register.index', ['colleges' => College::all()]);
+        return view('auth.register.index');
     }
 
     /**
@@ -64,7 +62,6 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
-            'college_id' => 'required|exists:colleges,id',
             'matric_number' => 'required|unique:users,matric_number',
             'matric_uuid' => 'unique:users,matric_uuid',
         ]);
@@ -82,7 +79,6 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'college_id' => $data['college_id'],
             'matric_number' => $data['matric_number'],
             'matric_uuid' => $data['matric_uuid'] ?? null,
         ]);

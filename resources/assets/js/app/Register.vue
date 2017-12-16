@@ -53,19 +53,6 @@
                                                     <input type="email" v-model="form.email" class="form-control" placeholder="Email...">
                                                 </div>
                                                 
-                                                <div class="input-group" style="display: flex; align-items: center; width: 100%; padding-left: 15px; padding-top: 15px">
-                                                    <i class="material-icons">school</i>
-                                                    <select class="selectpicker"
-                                                            data-style="select-with-transition"
-                                                            title="Single Select"
-                                                            v-model="form.college_id"
-                                                            data-size="10">
-                                                        <option disabled selected>Your kulliyah..</option>
-                                                        <option v-for="college in colleges" :value="college.id">{{ college.name }}</option>
-                                                    </select>
-                                                </div>
-    
-                                                
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="material-icons">sim_card_alert</i>
@@ -109,7 +96,6 @@
                 form: new Form({
                     "name" : "",
                     "email" : "",
-                    "college_id" : "",
                     "matric_number" : "",
                     "matric_uuid" : "",
                     "password" : ""
@@ -118,7 +104,7 @@
                 url: "/register"
             }
         },
-        props: ['server', 'colleges'],
+        props: ['server'],
         computed: {
             isLocalServer() {
                 return this.server == "local";
