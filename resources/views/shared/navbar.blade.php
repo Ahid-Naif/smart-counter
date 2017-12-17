@@ -15,14 +15,6 @@
 
         </div>
         <div class="collapse navbar-collapse" id="navigation">
-            <ul class="nav navbar-nav navbar-left">
-                <li>
-                    <a href="#" class="btn btn-simple btn-compact">
-                        How to use?
-                    </a>
-                </li>
-            </ul>
-
             <ul class="nav navbar-nav navbar-right">
                 @if(auth()->check())
                     <li class="dropdown">

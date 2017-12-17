@@ -13,14 +13,14 @@ class Application extends Model
      */
     protected $guarded = [];
     
-    protected $hidden = ['token', 'created_at', 'updated_at'];
+    protected $hidden = ['created_at', 'updated_at'];
     
     /**
      * The relations to eager load on every query.
      *
      * @var array
      */
-    protected $with = ['user', 'status', 'type'];
+    protected $with = ['user', 'type'];
     
     /**
      * Get the owner of this application
@@ -33,16 +33,6 @@ class Application extends Model
     }
     
     /**
-     * Get the application status
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function status()
-    {
-        return $this->belongsTo(ApplicationStatus::class, 'application_status_id');
-    }
-    
-    /**
      * Get the application type.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -50,14 +40,5 @@ class Application extends Model
     public function type()
     {
         return $this->belongsTo(ApplicationType::class, 'application_type_id');
-    }
-    
-    /**
-     * Application main route key.
-     *
-     * @return string
-     */
-    public function getRouteKeyName(){
-        return 'token';
     }
 }

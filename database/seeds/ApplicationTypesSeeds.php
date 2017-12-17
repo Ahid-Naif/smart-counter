@@ -10,8 +10,9 @@ class ApplicationTypesSeeds extends Seeder
      * @var array
      */
     protected $types = [
-        "Add",
-        "Drop",
+        "Confirmation Letter",
+        "Certification Letter",
+        "Result Slip",
     ];
     
     /**
@@ -23,7 +24,8 @@ class ApplicationTypesSeeds extends Seeder
     {
         foreach($this->types as $type){
             \App\ApplicationType::create([
-                "name" => $type
+                "name" => $type,
+                "slug" => str_slug($type)
             ]);
         }
     }

@@ -17,6 +17,7 @@ Route::group(['prefix' => '/portal', 'middleware' => 'auth'], function(){
     Route::group(['prefix' => '/application'], function(){
         Route::get('/create', ['uses' => 'ApplicationController@create'])->name('portal.application.create');
         Route::post('/store', ['uses' => 'ApplicationController@store']);
+        Route::post('/types', ['uses' => 'ApplicationController@types']);
     });
     
     Route::group(['prefix' => '/college'], function(){

@@ -136,7 +136,7 @@ md = {
     },
 
     initSliders: function(){
-        // Sliders for demo purpose
+        // Sliders for applications purpose
         $('#sliderRegular').noUiSlider({
             start: 40,
             connect: "lower",

@@ -16,4 +16,15 @@ class PortalController extends Controller
     {
         return view('portal.index');
     }
+    
+    /**
+     * Get all user's applications.
+     *
+     * @param Request $request
+     * @return mixed
+     */
+    public function applications(Request $request)
+    {
+        return new ApplicationCollection($request->user()->applications()->get());
+    }
 }

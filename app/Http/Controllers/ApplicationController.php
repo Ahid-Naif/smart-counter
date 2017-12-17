@@ -36,14 +36,28 @@ class ApplicationController extends Controller
      */
     public function store(CreateApplicationFormRequest $request)
     {
-        $file = new TextDocument(
-            storage_path('app/demo/graduation-letter.txt')
-        );
+        $applicationType = ApplicationType::find($request->application_type_id);
         
+        $file = new TextDocument(
+            storage_path("app/applications/{$applicationType->slug}.txt")
+        );
         $printer = new Printer();
         $printer->print($file);
         
+        $request->user()->applications()->create([
+            "application_type_id" => $request->application_type_id
+        ]);
+        
         return response()
             ->json(['data' => 'okay'], 200);
+    }
+    
+    /**
+     * Get all the available application types.
+     *
+     * @return ApplicationTypeCollection
+     */
+    public function types(){
+        return new ApplicationTypeCollection(ApplicationType::all());
     }
 }
