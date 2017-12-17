@@ -82545,6 +82545,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -82623,7 +82625,9 @@ var render = function() {
                       [
                         _c("td", [_vm._v(_vm._s(index + 1))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(application.type))])
+                        _c("td", [_vm._v(_vm._s(application.type))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(application.date))])
                       ]
                     )
                   })
@@ -82661,7 +82665,9 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("#")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Type")])
+        _c("th", [_vm._v("Type")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Date")])
       ])
     ])
   }

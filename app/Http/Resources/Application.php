@@ -17,6 +17,7 @@ class Application extends Resource
     {
         return [
             "type" => $this->type->name,
+            "date" => $this->created_at->diffForHumans(),
         ];
     }
 }
