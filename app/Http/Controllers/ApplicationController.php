@@ -36,16 +36,17 @@ class ApplicationController extends Controller
      */
     public function store(CreateApplicationFormRequest $request)
     {
-        $applicationType = ApplicationType::find($request->application_type_id);
+        $applicationType = ApplicationType::where('name', $request->application_type)->firstOrFail();
         
         $file = new TextDocument(
             storage_path("app/applications/{$applicationType->slug}.txt")
         );
         $printer = new Printer();
-        $printer->print($file);
+        $printer->print($file, $request->copies);
         
         $request->user()->applications()->create([
-            "application_type_id" => $request->application_type_id
+            "application_type_id" => $applicationType->id,
+            "copies" => $request->copies,
         ]);
         
         return response()

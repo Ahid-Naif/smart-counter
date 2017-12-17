@@ -17,6 +17,7 @@ class CreateApplicationsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->index();
             $table->integer('application_type_id');
+            $table->string('copies');
             $table->timestamps();
         });
     }

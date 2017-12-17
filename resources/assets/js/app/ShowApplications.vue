@@ -16,6 +16,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Type</th>
+                                <th>Copies</th>
                                 <th>Date</th>
                             </tr>
                             </thead>
@@ -25,6 +26,7 @@
                                 @click="showApplication(application)">
                                 <td>{{ index + 1 }}</td>
                                 <td>{{ application.type }}</td>
+                                <td>{{ application.copies }}</td>
                                 <td>{{ application.date }}</td>
                             </tr>
                             </tbody>

@@ -24,7 +24,8 @@ class CreateApplicationFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'application_type_id' => 'required|exists:application_types,id'
+            'application_type' => 'required',
+            'copies' => 'required',
         ];
     }
 }

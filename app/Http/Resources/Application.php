@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\ApplicationStatus;
 use Illuminate\Http\Resources\Json\Resource;
 
 class Application extends Resource
@@ -18,6 +17,7 @@ class Application extends Resource
         return [
             "type" => $this->type->name,
             "date" => $this->created_at->diffForHumans(),
+            "copies" => $this->copies,
         ];
     }
 }
